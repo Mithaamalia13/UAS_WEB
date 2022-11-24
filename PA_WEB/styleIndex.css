@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.Float{
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border: 0;
+    z-index: 9999;
+    color: #F89A58;
+    transition: .2s;
+}
+
+.Float:hover{
+    width: auto;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.Float span{
+    font-size: 16px;
+    margin-left: 5px;
+    transition: .2s;
+    line-height: 0px;
+    display: none;
+    color: #26223B;
+}
+
+.Float:hover span{
+    display: inline-block;
+}
+
+.Float img{
+    max-height: 25px;
+}
+
+.Float:hover img{
+    margin-bottom: -3px;
+}
+
+header, main, .main-content{
+    height: 100vh;
+    width: 100%;
+    background-image: url(img/background.png) ;
+    background-position:right center;
+    background-size: cover;
+    position:relative;
+    background-attachment: fixed;
+    
+}
+
+.Logo {
+    max-height: 30px;
+}
+
+.darkmode {
+    max-height: 20px;
+    cursor: pointer;
+}
+
+
+li, a{
+    font-family: "Dosis";
+    font-weight: 500;
+    font-size: 16px;
+    color: #F89A58;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    /* text-align: center; */
+}
+#navlink{
+    background-color: none;
+}
+
+.nav-links ul li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links ul li .darkmode, .login2, .darkmode2, .close, .resall, .resmy{
+    display: none;
+}
+.nav-links #close {
+    display: none;
+}
+#menu{
+    display: none;
+}
+
+.nav-links ul li a{
+    transition: all 0.3s ease 0;
+}
+
+.nav-links ul li a:hover{
+    color: #83CED5;
+}
+
+.drop{
+    background-color: #D0ECF0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.drop ul{
+    display: inline-block;
+    position: relative;
+}
+
+.drop ul li a, .drop ul li p {
+    display: block;
+    padding: 20px 25px ;
+    color: #F89A58;
+    text-decoration: none;
+    text-align: left;
+}
+
+.drop ul li p{
+    cursor: pointer;
+}
+
+.drop ul li p:hover{
+    color: #83CED5;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown {
+    width: 20%;
+    background-color: #FFF9F5;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+ul li:hover ul.dropdown{
+    display: block;
+}
+
+button {
+    color: #FFF9F5;
+    padding: 5px 15px;
+    background-color: #F89A58;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0;
+    font-family: "Dosis";
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0px;
+}
+
+.left-content {
+    font-family: 'Dosis';
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;
+}
+
+.left-content h1 {
+    font-size: 60px;
+    color: #83CED5;
+}
+.left-content p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #26223B;
+}
+
+.book button{
+    padding: 10px 15px;
+    margin-top: 30px;
+}
+
+.right-content {
+    flex-basis: 40%;
+    position: relative;
+    align-items: center;
+}
+
+.right-content img{
+    max-height: 400px;
+    min-height: 10px;
+}
+
+main{
+    align-items: center;
+    height: 200vh;
+}
+
+.main-content{
+    text-align: center;
+    color: #26223B;
+    font-family: 'Dosis';
+    background-size: cover;
+}
+.main-content h1{
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.main-content p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.box-content {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.vaksin img{
+    margin: 50px 10px 10px 10px;
+    max-height: 300px;
+}
+
+.grooming img{
+    margin: 50px 10px 10px 10px;
+    max-height: 300px;
+}
+
+.steril img{
+    margin: 50px 10px 10px 10px;
+    max-height: 300px;
+}
+
+.grooming p, .steril p, .vaksin p{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 150px 0px;
+}
+
+.left-about {
+    font-family: 'Dosis';
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;
+}
+
+.left-about h1 {
+    font-size: 60px;
+    color: #F89A58;
+}
+.left-about p {
+    font-size: 30px;
+    font-weight: 300;
+    color: #26223B;
+}
+
+.right-about {
+    flex-basis: 40%;
+    position: relative;
+    align-items: center;
+}
+
+.right-about img{
+    max-height: 400px;
+    min-height: 10px;
+}
+
+footer{
+    padding: 40px 0;
+    background-color: #F89A58;
+    font-family: 'Dosis';
+}
+
+footer ul {
+    list-style: none;
+    font-size: 25px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+footer ul li a{
+    color:#26223B;
+    text-decoration: none;
+}
+
+footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+footer ul li a:hover{
+    color: #83CED5;
+}
+
+footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #FFF9F5;
+}
+
+@media(max-width: 700px) {
+    .drop{
+        background-color: transparent;
+
+    }
+
+    .nav-links ul li ul li .allsch, .nav-links ul li ul li .mysch, .nav-links ul li ul li .lg, .nav-links ul li ul li .darkmode3{
+        display: none;
+    }
+
+    .nav-links ul li{
+        display: block;
+        padding-top: 15px;
+    } 
+    .nav-links ul li .login2, .darkmode2{
+        display: block;
+    }
+    .nav-links #close {
+        display: block;
+        max-height: 20px;
+        margin: 10px 10px 10px 100px;
+        cursor: pointer;
+        
+    }
+    .nav-links ul{
+        padding: 30px;
+    } 
+    #menu{
+        display: block;
+        max-height: 20px;
+    }
+
+    .drop{
+        display: none;
+        background-color: none;
+    }
+    
+    .drop ul{
+        display: none;
+    }
+    
+    .drop ul li a, .drop ul li p {
+        display: none;
+    }
+    
+    .drop ul li p{
+        display: none;
+    }
+    
+    .drop ul li p:hover{
+        display: none;
+    }
+    
+    ul li ul.dropdown li {
+        display: none;
+    }
+    
+    ul li ul.dropdown {
+        display: none;
+    }
+    ul li:hover ul.dropdown{
+        display: none;
+    }
+
+    .nav-links{
+        position: absolute;
+        background:#D0ECF0 ;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        text-align: left;
+        display: none;
+    }
+    .nav-links ul li .login, .darkmode{
+        display: none;
+    }
+
+    ul li .resall, ul li .resmy{
+        display: block;
+    }
+
+    .header-content{
+        flex-direction: column-reverse;
+        margin-top: 20px;
+    }
+    .right-content{
+        flex-basis: 100%;
+    }
+    .right-content img{
+        width: 77%;
+        margin-left: 15%;
+    }
+    .left-content{
+        flex-basis: 100%;
+    }
+    .left-content h1{
+        font-size: 45px;
+    }
+    .left-content p{
+        font-size: 16px;
+    }
+
+    .main-content h1{
+        font-size: 45px;
+    }
+    .main-content p{
+        font-size: 16px;
+    }
+    .vaksin img{
+        width: 50%;
+        margin-top: 10px;
+    }
+    .grooming img{
+        width: 50%;
+        margin-top: 10px;
+    }
+    .steril img{
+        width: 50%;
+        margin-top: 10px;
+    }
+    .box-content{
+        flex-direction: column-reverse;
+    }
+    .about-content{
+
+        flex-direction: column-reverse;
+    }
+    .right-about{
+        flex-basis: 100%;
+    }
+    .right-about img{
+        width: 50%;
+        margin-left:20%;
+        /* margin: 50% 0 0 20%; */
+    }
+    .left-about{
+        flex-basis: 100%;
+    }
+    .left-about h1{
+        font-size: 45px;
+    }
+    .left-about p{
+        font-size: 16px;
+    }
+
+}

@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance:none;
+    height: 20px;
+    width: 20px;
+    background-color:#83CED5;
+    border-radius:5px ;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+input[type="checkbox"]:after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    font-size: 18px;
+    color: #26223B;
+    display: none;
+}
+
+input[type="checkbox"]:checked{
+    background-color:#F89A58;
+}
+
+
+input[type="checkbox"]:checked:after{
+    display: block;
+}
+header, main, .main-content{
+    height: 100vh;
+    width: 100%;
+    background-image: url(img/background.png) ;
+    background-position:right center;
+    background-size: cover;
+    position:relative;
+    background-attachment: fixed;
+    
+}
+
+.Logo {
+    max-height: 30px;
+}
+
+.darkmode {
+    max-height: 20px;
+    cursor: pointer;
+}
+
+
+li, a{
+    font-family: "Dosis";
+    font-weight: 500;
+    font-size: 16px;
+    color: #F89A58;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+}
+#navlink{
+    background-color: none;
+}
+
+.nav-links ul li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links ul li .darkmode, .login2, .darkmode2, .close{
+    display: none;
+}
+.nav-links #close {
+    display: none;
+}
+#menu{
+    display: none;
+}
+
+.nav-links ul li a{
+    transition: all 0.3s ease 0;
+}
+
+.nav-links ul li a:hover{
+    color: #83CED5;
+}
+
+button {
+    color: #FFF9F5;
+    padding: 5px 15px;
+    background-color: #F89A58;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0;
+    font-family: "Dosis";
+    font-weight: 700;
+    font-size: 16px;
+}
+
+body{
+    font-family: "Dosis";
+    height: 100vh;
+    width: 100%;
+    background-image: url(img/background.png) ;
+    background-position:right center;
+    background-size: cover;
+    position:relative;
+    background-attachment: fixed;
+    
+}
+
+.table_head{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent;
+    font-size: 30px;
+    color: #26223B;
+
+}
+
+.table_head p {
+    color: #F89A58;
+}
+
+.add {
+    vertical-align: middle;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #F89A58;
+}
+
+.add img {
+    max-width: 15px;
+}
+
+button{
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input[type='text']{
+    height: 50px;
+    width: 340px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+    background: #ffffff;
+}
+
+.table {
+    height: 650px;
+    overflow: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    min-width: 1000px;
+    border-collapse: collapse;
+}
+
+table th {
+    position: sticky;
+    top: 0;
+    background-color: #F89A58;
+    color: #26223B;
+    font-size: 15px;
+}
+
+th, td{
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 20px;
+    word-break: break-all;
+    text-align: center;
+
+}
+
+.hapus img{
+    max-width: 22px;
+}
+.edit img{
+    max-width: 25px;
+}
+.accept img{
+    max-width: 25px;
+}
+
+tr:hover td{
+    color: #F89A58;
+    cursor: pointer;
+    background-color: #f6f9fc;
+}
+
+button:hover{
+    background-color: #83CED5;
+}
+
+::placeholder{
+    color: #F89A58;
+}
+
+@media(max-width: 700px) {
+    input[type='text']{
+        margin-top: 10px ;
+        margin-bottom: 15px ;
+        height: 37px;
+        max-width: 250px;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        padding: 0 25px;
+        background: #ffffff;
+    }
+
+    .table_head{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background-color: transparent;
+        font-size: 20px;
+        color: #26223B;
+    }
+    
+    .table_head p {
+        color: #F89A58;
+    }
+    
+    .add {
+        vertical-align: middle;
+        padding: 10px 20px;
+        color: #ffffff;
+        background-color: #F89A58;
+    }
+    
+    .add img {
+        max-width: 10px;
+    }    
+
+
+    .nav-links ul li{
+        display: block;
+        padding-top: 15px;
+    } 
+    .nav-links ul li .login2, .darkmode2{
+        display: block;
+    }
+    .nav-links #close {
+        display: block;
+        max-height: 20px;
+        margin: 10px 10px 10px 100px;
+        cursor: pointer;
+        
+    }
+    .nav-links ul{
+        padding: 30px;
+    } 
+    #menu{
+        display: block;
+        max-height: 20px;
+    }
+    .nav-links{
+        position: absolute;
+        background:#D0ECF0 ;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        text-align: left;
+        display: none;
+    }
+    .nav-links ul li .login, .darkmode{
+        display: none;
+    }
+
+}

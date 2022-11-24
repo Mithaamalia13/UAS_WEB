@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: "Dosis";
+    color: #26223B;
+    background-image: url(img/background.png) ;
+    background-position:right center;
+    background-size: cover;
+    position:relative;
+    margin: 0px;
+    background-attachment: fixed;
+    line-height: 1.5;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.form{
+    border-radius: 20px;
+    background: #F89A58;
+    width: 400px;
+    padding: 2rem;
+    box-shadow: 0 0px 2.2px rgba(0,0,0,0.028), 0 0px 5.3px rgba(0,0,0,0.04),0 0px 10px rgba(0,0,0,0.05);
+}
+
+.submit {
+    border-radius: 10px;
+    background: #FFF9F5;
+    color: #26223B;
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+.select, input[type="text"] {
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+}
+
+button:hover{
+    background-color: #83CED5;
+    color: #F89A58;
+}
+
+input[type="date"], input[type="time"]{
+    height: 30px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+}
+
+
+@media(max-width: 700px) {
+    .form{
+        border-radius: 20px;
+        background: #F89A58;
+        max-width: 300px;
+        min-width: 100px;
+        padding: 2rem;
+        box-shadow: 0 0px 2.2px rgba(0,0,0,0.028), 0 0px 5.3px rgba(0,0,0,0.04),0 0px 10px rgba(0,0,0,0.05);
+    }
+
+    .select, input[type="text"],input[type="password"], input[type="email"], input[type="datetime-local"] {
+        height: 30px;
+        max-width: 200px;
+        min-width: 50px;
+        border-radius: 10px;
+        border: none;
+        padding: 5px;
+    }
+}
