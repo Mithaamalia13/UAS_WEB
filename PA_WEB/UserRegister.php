@@ -5,11 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrasi</title>
-    <link rel="stylesheet" href="stylebooking.css">
+    <link rel="stylesheet" href="userRegis.css">
+    <!-- <link rel="stylesheet" href="stylebooking.css"> -->
     <link rel="shortcut icon" type="image/jpg" href="img/Kucing.png"/>
 </head>
 <body>
-    <div  class="form">
+    <div class="wrapper">
+        <div class="logo">
+            <img src="img/kuc.png" alt="">
+        </div>
+        <div class="text-center mt-4 name">
+            <img src="img/Logo.png" alt="">
+        </div>
+        <form action="" method="post" class="p-3 mt-3">
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="nama" id="NamaLengkap" placeholder="Nama Lengkap">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="email" name="email" id="email" placeholder="Email">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="username" id="userName" placeholder="Username">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="password" name="password" id="pwd" placeholder="Password">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="password" name="konfirmasi" id="pwd2" placeholder="Konfirmasi Password">
+            </div>
+            <button class="btn mt-3" name='regis' type="submit">Sign Up</button>
+        </form>
+        <div class="text-center fs-6">
+            Sudah punya akun? <a href="UserLogin.php"> Login</a>
+        </div>
+    </div>
+    <!-- <div  class="form">
     <h3>Registrasi Akun</h3>
     <form action="" method="post">
         <label for="">Nama Lengkap</label><br>
@@ -33,7 +68,7 @@
     <p>Sudah Punya Akun?
         <a href = "UserLogin.php">Login</a>
     </p>
-    </div>
+    </div> -->
 
 </body>
 </html>
