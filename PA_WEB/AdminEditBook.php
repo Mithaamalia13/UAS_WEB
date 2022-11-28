@@ -19,24 +19,25 @@
 
 ?> 
   
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Comptible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Jadwal</title>
-    <!-- <link rel="stylesheet" href="stylebooking.css"> -->
-    <link rel="stylesheet" href="stylebooking1.css">
-    <link rel="shortcut icon" type="image/jpg" href="img/Kucing.png" />
+    <title>Admin Edit Jadwal</title>
+    <link rel="stylesheet" href="styleedit1.css">
+    <link rel="shortcut icon" type="image/jpg" href="img/Kucing.png"/>
 </head>
 <body>
     <div class="wrapper">
-        <div class="text-center mt-4 name">
-            <h3>BUAT JADWAL PERAWATAN KUCING</h3><br>
-        </div>
-        <form action="" method="post" enctype="multipart/form-data" class="p-3 mt-3">
-            <input type="hidden" name="bnama" value=<?php echo $data ?>> <br><br>
+        <div class="form">  
+            <h3>EDIT JADWAL PERAWATAN KUCING</h3><br>
+            <form action="" method="post" enctype="multipart/form-data" class="p-3 mt-3">
+            <div class="form-field d-flex align-items-center">
+                <label for="">Nama</label><br>
+                <input type="text" name="bnama" value=<?=$row['bnama']?>> <br><br>
+            </div>
             <div class="form-field d-flex align-items-center">
                 <label for="">Jenis Perawatan</label><br>
                 <select name="rawat" class="select">
@@ -61,13 +62,11 @@
                 <input type="date" name="tanggal_rawat" min="<?php echo $mindate ?>" max="<?php echo $maxdate ?>">
                 <input type="time" name="waktu" min="08:00" max="20:00"><br><br>
             </div>
-            <div class="form-field d-flex align-items-center">
-                <label for="">Gambar Kucing : </label><br>
-                <input type="file" name='gambar' accept="image/*"><br><br>
-            </div>
-            <button class="btn mt-3" name='submit' type="submit">EDIT</button>
-        </form>
+                <button class="btn mt-3" name='submit' type="submit">EDIT</button>
+            </form>
+        </div>
     </div>
+    
 </body>
 </html>
 

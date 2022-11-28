@@ -25,12 +25,12 @@ body {
 
 .wrapper {
     max-width: 450px;
-    min-height: 750px;
+    min-height: 600px;
     margin: 80px auto;
     padding: 40px 30px 30px 30px;
     background-color: #f1e8e2;
     border-radius: 15px;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+    box-shadow: 13px 10px 20px #cbced1, -13px -10px 20px #fff;
 }
 
 .wrapper .name {

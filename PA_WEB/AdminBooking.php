@@ -15,7 +15,6 @@
     $max = $maxdate."T".$maxtime;
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +32,7 @@
             <h3>BUAT JADWAL PERAWATAN KUCING</h3><br>
         </div>
         <form action="" method="post" enctype="multipart/form-data" class="p-3 mt-3">
-            <input type="hidden" name="bnama" value=<?php echo $data ?>> <br><br>
+            <input type="hidden" name="bnama" value=<?php echo $_SESSION['nama_admin']?>> <br><br>
             <div class="form-field d-flex align-items-center">
                 <label for="">Jenis Perawatan</label><br>
                 <select name="rawat" class="select">
@@ -68,10 +67,12 @@
 </body>
 </html>
 
+
+
 <?php
     require 'GlobalConfig.php';
     if (isset($_POST['submit'])){
-        $bnama = $_SESSION['Nama'];
+        $bnama = $_POST['bnama'];
         $bjenis = $_POST['rawat'];
         $knama = $_POST['knama'];
         $kkelamin = $_POST['kelamin'];
@@ -91,7 +92,7 @@
             $result = $db->query($query);
 
             if($result){
-                header("Location:UserGlobalSchedule.php");
+                header("Location:Adminjadwal.php");
             }else{
                 echo "Gagal";
             }
@@ -99,3 +100,4 @@
         }
     }
 ?> 
+ 
