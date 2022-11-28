@@ -19,41 +19,53 @@
 
 ?> 
   
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Comptible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Edit Jadwal</title>
-    <link rel="stylesheet" href="styleedit.css">
-    <link rel="shortcut icon" type="image/jpg" href="img/Kucing.png"/>
+    <title>Booking Jadwal</title>
+    <!-- <link rel="stylesheet" href="stylebooking.css"> -->
+    <link rel="stylesheet" href="stylebooking1.css">
+    <link rel="shortcut icon" type="image/jpg" href="img/Kucing.png" />
 </head>
 <body>
-    <div class="form">  
-        <h3>EDIT JADWAL PERAWATAN KUCING</h3><br>
-        <form action="" method="post">
-            <label for="">Nama</label><br>
-            <input type="text" name="bnama" value=<?=$row['bnama']?>> <br><br>
-            <label for="">Jenis Perawatan</label><br>
-            <select name="rawat" class="select" value=<?=$row['bjenis']?>>
-                <option value="GROOMING">Grooming</option>
-                <option value="VACCINATION">Vaksin</option>
-                <option value="STERILIZATION">Steril</option>
-                <option value="SEMUA PERAWATAN">All.</option>
-            </select><br><br>
-            <label for="">Nama Kucing</label><br>
-            <input type="text" name="knama" value=<?=$row['knama']?>> <br><br>
-            <label for="">Jenis Kelamin Kucing</label><br>
-            <select name="kelamin" class="select" value=<?=$row['kkelamin']?>>
-                <option value="JANTAN">Jantan</option>
-                <option value="BETINA">Betina</option>
-            </select><br><br>
-            <input type="hidden" name="tanggal_booking" value=<?php echo $mindate ?>>
-            <label for="">Tanggal dan Waktu Perawatan : </label><br>
-            <input type="date" name="tanggal_rawat" min="<?php echo $mindate?>" max="<?php echo $maxdate?>">
-            <input type="time" name = "waktu" min ="08:00" max = "20:00"><br><br>
-            <button type="submit" name='submit' class="submit">EDIT</button>
+    <div class="wrapper">
+        <div class="text-center mt-4 name">
+            <h3>BUAT JADWAL PERAWATAN KUCING</h3><br>
+        </div>
+        <form action="" method="post" enctype="multipart/form-data" class="p-3 mt-3">
+            <input type="hidden" name="bnama" value=<?php echo $data ?>> <br><br>
+            <div class="form-field d-flex align-items-center">
+                <label for="">Jenis Perawatan</label><br>
+                <select name="rawat" class="select">
+                    <option value="GROOMING">Grooming</option>
+                    <option value="VACCINATION">Vaksin</option>
+                    <option value="STERILIZATION">Steril</option>
+                    <option value="SEMUA PERAWATAN">All.</option>
+                </select><br><br>
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <label for="">Nama Kucing</label><br>
+                <input type="text" name="knama" id=""> <br><br>
+                <label for="">Jenis Kelamin Kucing</label><br>
+                <select name="kelamin" class="select">
+                    <option value="JANTAN">Jantan</option>
+                    <option value="BETINA">Betina</option>
+                </select><br><br>
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <input type="hidden" name="tanggal_booking" value=<?php echo $min ?>>
+                <label for="">Tanggal dan Waktu Perawatan : </label><br>
+                <input type="date" name="tanggal_rawat" min="<?php echo $mindate ?>" max="<?php echo $maxdate ?>">
+                <input type="time" name="waktu" min="08:00" max="20:00"><br><br>
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <label for="">Gambar Kucing : </label><br>
+                <input type="file" name='gambar' accept="image/*"><br><br>
+            </div>
+            <button class="btn mt-3" name='submit' type="submit">EDIT</button>
         </form>
     </div>
 </body>
