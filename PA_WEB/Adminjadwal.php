@@ -17,56 +17,53 @@ body {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Jadwal</title>
-    <!-- <link rel="stylesheet" href="styleJadwal.css"> -->
+    <link rel="stylesheet" href="styleJadwal.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> -->
     <link rel="shortcut icon" type="image/jpg" href="img/Kucing.png"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
 </head>
 <body >
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid" id="navbarNavDropdown">
-  <a class="navbar-brand" href="Admindashboard.php">
-      <img src="img/Logo.png" alt="Bootstrap" height="24">
-    </a>
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <?php echo $_SESSION['nama_admin'] ?>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="Admindashboard.php">Dashboard</a></li>
-            <li><a class="dropdown-item" href="Adminhistory.php">History</a></li>
-            <li><a class="dropdown-item" href="AdminBooking.php">Tambah</a></li>
-            <li><a class="dropdown-item" href="UserLogout.php">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-  </div>
-</nav>
-<nav class="navbar bg-light">
-  <div class="container-fluid">
-    <form class="d-flex" role="search" action="Adminjadwal.php" method="GET">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];}?>" name="cari">
-      <button class="btn btn-outline-success" type="submit" name="search">Search</button>
-    </form>
-  </div>
-</nav>
-    <div class="table-responsive">
-    <table class="table table-dark table-hover">
-<thead>
-    <tr>
-      <th scope="col">NO</th>
-      <th scope="col">NAMA PEMILIK</th>
-      <th scope="col">JENIS PERAWATAN</th>
-      <th scope="col">NAMA KUCING</th>
-      <th scope="col">KELAMIN KUCING</th>
-      <th scope="col">TANGGAL BOOKING</th>
-      <th scope="col">TANGGAL RAWAT</th>
-      <th scope="col">FOTO KUCING</th>
-      <th colspan='2' scope ="col">Actions</th>
-    </tr>
-  </thead>
-  <?php
+<nav>
+        <a href="Admindashboard.php"><img class="Logo" src="img/Logo.png" alt="Cat Paw" id="logo"></a>
+        <div  class="nav-links" id="navlink">
+            <ul id="menuList">
+                <li><a href="Admindashboard.php"><h1>DASHBOARD ADMIN</h1></a></li>
+                <li><a class="login2" href="UserLogout.php">Logout</a></li>
+                <li id="darkmode2"><p class="darkmode2">Dark Mode</p></li>
+                <!-- <li><a class="login" href="#Home"><button>Login</button></a></li> -->
+            </ul>
+            <img src="img/close.png" id="close">
+        </div>
+        <img src="img/menu.png" alt="menu" id="menu">
+        <img src="img/darkmode.png" alt="darkmode" class="darkmode" id="btnmode">
+    </nav>
+    <div class="table_head">
+        <h3>JADWAL PERAWATAN KUCING</h3>
+        <form action="Adminjadwal.php" method="GET" >
+            <input type='text' name="cari" id="cari" placeholder="Type..." value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];}?>">
+            <button type="submit" name="search">CARI</button>
+        </form>
+        <div>
+            <button class = "add"><a href="AdminBooking.php"><img src="img/addw.png" alt="Tambah Data"></a></button>
+        </div>
+    </div>
+
+    <div class="table">
+<table border='1'>
+        <tr>
+            <th style="width:5%">NO</th>
+            <th>NAMA PEMILIK</th>
+            <th style="width:15%">JENIS PERAWATAN</th>
+            <th>NAMA KUCING</th>
+            <th style="width:8%">KELAMIN KUCING</th>
+            <th>TANGGAL BOOKING</th>
+            <th>TANGGAL RAWAT</th>
+            <th>FOTO KUCING</th>
+            <th style="width:6%">STATUS</th>
+            <th colspan='2' style="width:10%">Actions</th>
+            
+        </tr>
+            <?php
             include 'GlobalConfig.php';
                 if(isset($_GET['cari'])){
                     $cari = $_GET['cari'];
@@ -78,9 +75,8 @@ body {
                 $tampil = mysqli_query($db, $query);
                 while ($row = mysqli_fetch_array($tampil)){    
             ?>
-  <tbody>
-    <tr>
-    <td><?=$i?></td>
+        <tr>
+           <td><?=$i?></td>
            <td><?=$row['bnama']?></td>
            <td><?=$row['bjenis']?></td>
            <td><?=$row['knama']?></td>
@@ -88,18 +84,23 @@ body {
            <td><?=$row['bbook']?></td>
            <td><?php echo $row['btrawat']," : ",$row['bwaktu']?></td>
            <td><img src="gambar/<?=$row['kfoto']?>" alt="" width = 100px >
-           <td class = "edit"><a href="AdminEditBook.php?id=<?=$row['id']?>">Edit</a></td>
-           <td class = "hapus" ><a href="AdminHapusBook.php?id=<?=$row['id']?>">Hapus</a></td>
-    </tr>
-    <?php 
+           <td class = "accept"><a href="AdminEditBook.php?id=<?=$row['id']?>">
+                    <label>
+                    <input type="checkbox">
+                    <span class="check"></span>
+                    </label>
+            </a></td>
+           <td class = "edit"><a href="AdminEditBook.php?id=<?=$row['id']?>"><img src="img/edit.png" alt="edit"></a></td>
+           <td class = "hapus" ><a href="AdminHapusBook.php?id=<?=$row['id']?>"><img src="img/delete.png" alt="hapus"></a></td>
+        </tr>
+            <?php 
                 $i++;   
                 }
             ?>
-  </tbody>
-</table>
+    </table>
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
 </body>
 <script src="jQuery.js"></script>
 </html>
