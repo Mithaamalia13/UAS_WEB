@@ -18,7 +18,7 @@ Untuk penggunaan websitenya bisa dibuka saja ya manual book berikut :
 
 ## About Us
 
-Kelompok 5 A2 2020:
+Kelompok 3 2020:
 - 2009106017 Riska Nurliyanti
 - 2009106026 Sulhairah
 - 2009106028 Mitha Amalia
